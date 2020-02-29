@@ -6,7 +6,7 @@ try:
     # 一种，是二进制文件（图片、mp3、ppt等这些文件）
     # open()打开文件时，默认是以文本文件的形式打开的，但是open()默认的编码为None
     #   所以处理文本文件时，必须要指定文件的编码
-    with open(file_name,encoding='utf-8') as file_obj:
+    with open(file_name, encoding='utf-8') as file_obj:
         # 通过 read() 来读取文件中的内容
         # 如果直接调用read()它会将文本文件的所有内容全部都读取出来
         #   如果要读取的文件较大的话，会一次性将文件的内容加载到内存中，容易导致内存泄漏
@@ -25,14 +25,14 @@ try:
         content = file_obj.read(6)
         # print(content)
         # print(len(content))
-except FileNotFoundError :
+except FileNotFoundError:
     print(f'{file_name} 这个文件不存在！')
 
 # 读取大文件的方式
 file_name = 'demo.txt'
 
 try:
-    with open(file_name,encoding='utf-8') as file_obj:
+    with open(file_name, encoding='utf-8') as file_obj:
         # 定义一个变量，来保存文件的内容
         file_content = ''
         # 定义一个变量，来指定每次读取的大小
@@ -51,8 +51,7 @@ try:
             # print(content,end='')
             file_content += content
 
-except FileNotFoundError :
+except FileNotFoundError:
     print(f'{file_name} 这个文件不存在！')
-
 
 print(file_content)
